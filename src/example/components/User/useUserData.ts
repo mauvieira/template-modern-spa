@@ -1,18 +1,8 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 import { apiBaseUrl } from "../../../constants/api";
 
+const getUserData = () => fetch(apiBaseUrl + "user").then((res) => res.json());
+
 export function useUserData() {
-  const [data, setData] = useState();
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState();
-
-  useEffect(() => {
-    fetch(apiBaseUrl + "user")
-      .then((response) => response.json())
-      .then((data) => setData(data))
-      .catch((error) => setError(error))
-      .finally(() => setIsLoading(false));
-  }, []);
-
-  return { data, isLoading, error };
+  return useQuery("user-data", getUserData)
 }
