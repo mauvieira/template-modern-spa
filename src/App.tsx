@@ -1,5 +1,12 @@
+import { Title, User } from "./example/components";
+
 function App() {
-  return <h1>vite</h1>;
+  return (
+    <>
+      <Title/>
+      <User/>
+    </>
+  );
 }
 
 export default App;
