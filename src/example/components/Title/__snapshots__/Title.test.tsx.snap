@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`Title component > renders correctly 1`] = `
+<div>
+  <h1>
+    Title
+  </h1>
+</div>
+`;
