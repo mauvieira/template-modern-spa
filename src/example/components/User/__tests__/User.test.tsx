@@ -1,5 +1,9 @@
-import { render, screen, waitForElementToBeRemoved } from "../../../test/utils";
-import { User } from "./User";
+import {
+  render,
+  screen,
+  waitForElementToBeRemoved
+} from "../../../../test/utils";
+import { User } from "../User";
 
 describe("User info component", () => {
   it("should show the loading status correctly", () => {
@@ -19,5 +23,5 @@ describe("User info component", () => {
     );
 
     expect(user).toBeInTheDocument();
-  })
+  });
 });
