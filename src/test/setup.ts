@@ -1,8 +1,8 @@
 import "@testing-library/jest-dom";
-import { setLogger } from 'react-query';
+import { setLogger } from "react-query";
 import "whatwg-fetch";
 
-import { server } from "../mocks/server";
+import { server } from "@/mocks/server";
 
 beforeAll(() => {
   server.listen({ onUnhandledRequest: "error" });
@@ -14,4 +14,4 @@ setLogger({
   log: console.log,
   warn: console.warn,
   error: () => {},
-})
+});

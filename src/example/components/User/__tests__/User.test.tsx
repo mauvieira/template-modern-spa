@@ -2,20 +2,20 @@ import {
   renderWithClient,
   screen,
   waitForElementToBeRemoved
-} from "../../../../test/utils";
+} from "@/test/utils";
+
 import { User } from "../User";
 
 describe("User info component", () => {
   it("should show the loading status correctly", () => {
-
-    renderWithClient(<User />)
+    renderWithClient(<User />);
 
     const loading = screen.getByText(/loading\.\.\./i);
     expect(loading).toBeInTheDocument();
   });
 
   it("should remove the loading status and show the user data", async () => {
-    renderWithClient(<User />)
+    renderWithClient(<User />);
 
     await waitForElementToBeRemoved(() => screen.getByText(/loading\.\.\./i));
 

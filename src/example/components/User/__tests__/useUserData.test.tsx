@@ -1,4 +1,4 @@
-import { createWrapper, renderHook, waitFor } from "../../../../test/utils";
+import { createWrapper, renderHook, waitFor } from "@/test/utils";
 import { useUserData } from "../useUserData";
 
 describe("useUserData hook", () => {
