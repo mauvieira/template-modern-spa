@@ -1,19 +1,14 @@
-import { useEffect, useState } from "react";
-import { apiBaseUrl } from "../../../constants/api";
+import { useUserData } from "./useUserData";
 
 export const User = () => {
-  const [user, setUser] = useState();
-  const [loading, setLoading] = useState(true);
+  const { data: user, isLoading, error } = useUserData();
 
-  useEffect(() => {
-    fetch(apiBaseUrl + "user")
-      .then((response) => response.json())
-      .then((data) => setUser(data))
-      .finally(() => setLoading(false));
-  }, []);
+  if (isLoading) {
+    return <span>loading... 🕔</span>;
+  }
 
-  if(loading) {
-    return <span>loading...</span>
+  if(error) {
+    return <span>error 😢</span>
   }
 
   return <div>{JSON.stringify(user, null, 4)}</div>;
